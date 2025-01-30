@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --back-gray: #e5e5e5;
+    --green-menta: #00ba80;
+    --light-blue: #0087ba;
+}
+
+body {
+    width: 100dvw;
+    min-height: 100dvh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container {
+    width: 100dvw;
+    height: 70rem;
+    background-color: var(--back-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card-tittle {
+    font-family: "Poppins", serif;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.card-wrapper {
+    display: flex;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.card-item {
+    background-color: var(--back-gray);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    width: 25rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.planet-cont {
+    width: 25rem;;
+    max-height: 70rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-img {
+    position: relative;
+    width: 24rem;
+    height: 24rem;
+    background-color: white;
+    z-index: 1;
+    transition: background 0.4s ease-in-out;
+}
+
+.back-img::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, var(--green-menta), var(--light-blue));
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.back-img::after {
+    content: "";
+    position: absolute;
+    inset: 0; /* Matches the div size */
+    background: white;
+    border-radius: inherit;
+    z-index: 0;
+    transition: background 0.4s ease-in-out;
+}
+
+.back-img:hover::after {
+    background: url("../../public/images/00000.jpg") center/cover no-repeat;
+}
+
+.planet-img-container {
+    z-index: 2;
+    width: 22rem;
+    height: 22rem;
+    display: flex;
+    margin-top: -17rem;
+}
+
+.planet-img {
+    width: 100%;
+    max-width: 22rem;
+    height: auto;
+    display: block;
+}
+
+.planet-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-family: "Poppins", serif;
+}
+
+.planet-name {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--light-blue);
+}
+
+.planet-diam {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.planet-desc {
+    width: 21rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: justify;
+}
