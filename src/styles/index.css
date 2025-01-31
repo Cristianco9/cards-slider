@@ -16,23 +16,37 @@ html {
 }
 
 body {
-    width: 100dvw;
-    min-height: 100dvh;
-    background-color: white;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--back-gray);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     font-family: "Poppins", serif;
 }
 
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 110rem;
+    height: 100vh;
+
+}
+
 .container {
-    width: 100dvw;
+    width: 81rem;
     height: 70rem;
     background-color: var(--back-gray);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
 }
 
 .card-tittle {
@@ -40,19 +54,40 @@ body {
     font-weight: 700;
 }
 
-.card-wrapper {
+.slider-container {
+    position:relative;
+    width: 100%;
+    overflow: hidden;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+}
+
+.card-wrapper {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 3rem;
+    padding: 1rem;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    flex-wrap: nowrap;
     justify-content: center;
+}
+
+.card-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .card-list {
     display: flex;
-    flex-direction: row;
-    gap: 3rem;
+    padding: 0;
+    gap: 2rem;
+    list-style: none;
+    width: 214rem;
 }
 
+
 .card-item {
+    flex: 0 0 auto;
     background-color: var(--back-gray);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.6);
     border-radius: 1rem;
@@ -61,7 +96,34 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    align-items: center;
+    scroll-snap-align: center;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 3rem;
+}
+
+.next-btn {
+    right: 3rem;
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .planet-cont {
