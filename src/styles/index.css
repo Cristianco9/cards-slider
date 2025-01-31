@@ -22,6 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: "Poppins", serif;
 }
 
 .container {
@@ -35,13 +36,14 @@ body {
 }
 
 .card-tittle {
-    font-family: "Poppins", serif;
     font-size: 5rem;
     font-weight: 700;
 }
 
 .card-wrapper {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card-list {
@@ -63,7 +65,7 @@ body {
 }
 
 .planet-cont {
-    width: 25rem;;
+    width: 25rem;
     max-height: 70rem;
     display: flex;
     flex-direction: column;
@@ -71,7 +73,7 @@ body {
     justify-content: center;
 }
 
-.back-img {
+.back-img-container {
     position: relative;
     width: 24rem;
     height: 24rem;
@@ -80,7 +82,7 @@ body {
     transition: background 0.4s ease-in-out;
 }
 
-.back-img::before {
+.back-img-container::before {
     content: "";
     position: absolute;
     top: -4px;
@@ -92,7 +94,7 @@ body {
     z-index: -1;
 }
 
-.back-img::after {
+.back-img-container::after {
     content: "";
     position: absolute;
     inset: 0; /* Matches the div size */
@@ -102,8 +104,20 @@ body {
     transition: background 0.4s ease-in-out;
 }
 
-.back-img:hover::after {
-    background: url("../../public/images/00000.jpg") center/cover no-repeat;
+.back-img {
+    display: flex;
+    position: relative;
+    width: 24rem;
+    height: 24rem;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+.back-img-container:hover .back-img {
+    opacity: 1;
+    visibility: visible;
 }
 
 .planet-img-container {
@@ -118,7 +132,7 @@ body {
     width: 100%;
     max-width: 22rem;
     height: auto;
-    display: block;
+    position: relative;
 }
 
 .planet-data {
@@ -127,7 +141,6 @@ body {
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    font-family: "Poppins", serif;
 }
 
 .planet-name {
