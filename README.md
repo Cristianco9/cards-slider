@@ -1,4 +1,4 @@
-#cards-slider
+# cards-slider
 
 ## 🚀 Project Overview
 The Solar System Slider is an interactive web application that allows users to explore the planets of our solar system. It features a horizontal slider showcasing each planet with a background surface image, planet image, and key information, including size and description.
